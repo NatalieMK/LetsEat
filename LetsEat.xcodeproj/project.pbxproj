@@ -23,6 +23,7 @@
 		39C9EFCF273C7E5F0045633F /* MealListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9EFCE273C7E5F0045633F /* MealListViewController.swift */; };
 		39C9EFD1273C8D060045633F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9EFD0273C8D060045633F /* Extensions.swift */; };
 		39C9EFD3273C9AF60045633F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9EFD2273C9AF60045633F /* WelcomeViewController.swift */; };
+		39C9F01E273EFA3A0045633F /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9F01D273EFA3A0045633F /* APICaller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		39C9EFCE273C7E5F0045633F /* MealListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListViewController.swift; sourceTree = "<group>"; };
 		39C9EFD0273C8D060045633F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		39C9EFD2273C9AF60045633F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		39C9F01D273EFA3A0045633F /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 				39C9EF91273C7CB50045633F /* AppDelegate.swift */,
 				39C9EF93273C7CB50045633F /* SceneDelegate.swift */,
 				39C9EFD0273C8D060045633F /* Extensions.swift */,
+				39C9F01D273EFA3A0045633F /* APICaller.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				39C9EF92273C7CB50045633F /* AppDelegate.swift in Sources */,
 				39C9EFD3273C9AF60045633F /* WelcomeViewController.swift in Sources */,
 				39C9EF94273C7CB50045633F /* SceneDelegate.swift in Sources */,
+				39C9F01E273EFA3A0045633F /* APICaller.swift in Sources */,
 				39C9EFCB273C7E1C0045633F /* CategoryViewController.swift in Sources */,
 				39C9EFC7273C7DB20045633F /* MenuViewController.swift in Sources */,
 			);

@@ -8,12 +8,19 @@
 import UIKit
 
 class CategoryViewController: UIViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .lightBlue
+        title = "Categories"
+    }
+    
+    @objc func goBack(){
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
 
+                        
 }

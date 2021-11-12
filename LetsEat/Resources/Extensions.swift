@@ -50,3 +50,11 @@ extension UIApplication {
         return false
     }
 }
+
+extension UIColor{
+    static let lavendar = UIColor(red: 220/255, green: 209/255, blue: 255/255, alpha: 1.0)
+    static let lightBlue = UIColor(red: 153/255, green: 204/255, blue: 255/255, alpha: 1.0)
+    static let salmon = UIColor(red: 255/255, green:164/255, blue: 185/255, alpha: 1.0)
+}
+
+
