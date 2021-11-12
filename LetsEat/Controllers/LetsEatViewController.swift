@@ -20,9 +20,9 @@ class LetsEatViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if (UIApplication.isFirstLaunch()){
+//        if (UIApplication.isFirstLaunch()){
         welcomeUser()
-        }
+//        }
 }
 
 private func welcomeUser(){
