@@ -46,7 +46,6 @@ class WelcomeViewController: UIViewController {
         super.viewDidLayoutSubviews()
         let size = view.width/3
         
-        
         imageView.frame = CGRect(x: (view.width - size)/2,
                                  y: view.height/3,
                                  width: size,

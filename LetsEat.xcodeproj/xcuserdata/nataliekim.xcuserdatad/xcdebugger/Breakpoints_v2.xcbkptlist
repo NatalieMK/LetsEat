@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8FF8BF38-24A3-472F-8B52-7B67557F9C94"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EF0208FF-CF88-43E8-A116-3C1DFDE6A576"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LetsEat/Controllers/LetsEatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "categoryButton"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "EF0208FF-CF88-43E8-A116-3C1DFDE6A576 - f36d2aa47dce3338"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; __C.UIButton in variable initialization expression of LetsEat.LetsEatViewController.categoryButton : __C.UIButton"
+                  moduleName = "LetsEat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nataliekim/Desktop/LetsEat/LetsEat/Controllers/LetsEatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "EF0208FF-CF88-43E8-A116-3C1DFDE6A576 - 27b013443e68c6d8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LetsEat.LetsEatViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; LetsEat.LetsEatViewController"
+                  moduleName = "LetsEat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nataliekim/Desktop/LetsEat/LetsEat/Controllers/LetsEatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "130">
+               </Location>
+               <Location
+                  uuid = "EF0208FF-CF88-43E8-A116-3C1DFDE6A576 - 42e09aabf11ede94"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LetsEat.LetsEatViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;LetsEat.LetsEatViewController&gt;"
+                  moduleName = "LetsEat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nataliekim/Desktop/LetsEat/LetsEat/Controllers/LetsEatViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "87">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
