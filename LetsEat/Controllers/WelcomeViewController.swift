@@ -23,7 +23,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         title = "Let's Eat!"
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .white
         
         // Add subviews
         
