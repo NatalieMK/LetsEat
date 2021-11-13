@@ -24,6 +24,7 @@
 		39C9EFD1273C8D060045633F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9EFD0273C8D060045633F /* Extensions.swift */; };
 		39C9EFD3273C9AF60045633F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9EFD2273C9AF60045633F /* WelcomeViewController.swift */; };
 		39C9F01E273EFA3A0045633F /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9F01D273EFA3A0045633F /* APICaller.swift */; };
+		39C9F020273F151F0045633F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9F01F273F151F0045633F /* CategoryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		39C9EFD0273C8D060045633F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		39C9EFD2273C9AF60045633F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		39C9F01D273EFA3A0045633F /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		39C9F01F273F151F0045633F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +172,7 @@
 				39C9EF93273C7CB50045633F /* SceneDelegate.swift */,
 				39C9EFD0273C8D060045633F /* Extensions.swift */,
 				39C9F01D273EFA3A0045633F /* APICaller.swift */,
+				39C9F01F273F151F0045633F /* CategoryCollectionViewCell.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				39C9EFD1273C8D060045633F /* Extensions.swift in Sources */,
 				39C9EFCF273C7E5F0045633F /* MealListViewController.swift in Sources */,
 				39C9EF96273C7CB50045633F /* LetsEatViewController.swift in Sources */,
+				39C9F020273F151F0045633F /* CategoryCollectionViewCell.swift in Sources */,
 				39C9EFCD273C7E3F0045633F /* RecipeViewController.swift in Sources */,
 				39C9EF92273C7CB50045633F /* AppDelegate.swift in Sources */,
 				39C9EFD3273C9AF60045633F /* WelcomeViewController.swift in Sources */,
