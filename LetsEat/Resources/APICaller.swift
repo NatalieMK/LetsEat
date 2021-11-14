@@ -31,7 +31,7 @@ final class APICaller{
         static let lookupStub = "www.themealdb.com/api/json/v1/1/lookup.php?"
         
         //URL stub for search actions (i.e. search for meal by name, by first letter).
-        static let searchStub = "www.themealdb.com/api/json/v1/1/search.php?"
+        static let searchStub = "https://www.themealdb.com/api/json/v1/1/search.php?"
         
         //URL stub for filter actions (i.e. filter by category, main ingredient, or area)
         static let filterStub = "www.themealdb.com/api/json/v1/1/filter.php?"
@@ -66,7 +66,34 @@ final class APICaller{
     }
     
     public func getLookupData() {}
-    public func getSearchedData() {}
+    
+    public func getSearchedData<T:Codable>(with chosenString: String, expecting: T.Type, completion: @escaping (Result<T, Error>) -> Void){
+        
+        let fullURL = URL(string: URLConstants.searchStub + chosenString)
+        createRequest(with: fullURL) { dataRequest in
+            let task = URLSession.shared.dataTask(with: dataRequest) {data, _,
+                error in
+                guard let data = data, error == nil else{
+                    completion(.failure(APIError.defaultError))
+                    return
+                }
+                
+                do {
+                    print(data)
+                    let result = try JSONDecoder().decode(T.self, from: data)
+                    completion(.success(result))
+                }
+                
+                catch {
+                    print(String(describing: error))
+                    print(error.localizedDescription)
+                    completion(.failure(error))
+                }
+                
+            }
+            task.resume()
+        }
+    }
     public func getFilteredData() {}
     
     

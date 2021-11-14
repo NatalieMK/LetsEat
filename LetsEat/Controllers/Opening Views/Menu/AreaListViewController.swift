@@ -43,4 +43,10 @@ class AreaListViewController: UIViewController, UITableViewDelegate, UITableView
         return areaList.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let name = "\(areaList[indexPath.row])"
+        print(name)
+        
+    }
 }

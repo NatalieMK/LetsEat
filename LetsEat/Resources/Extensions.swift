@@ -57,5 +57,10 @@ extension UIColor{
     static let salmon = UIColor(red: 255/255, green:164/255, blue: 185/255, alpha: 1.0)
 }
 
-
+extension UIViewController{
+    
+     func failedToFetch(){
+        print("Something went wrong")
+    }
+}
 

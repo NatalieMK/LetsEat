@@ -50,6 +50,7 @@ private func welcomeUser(){
         
         tabBarVC.setViewControllers([menuVC, catVC, searchVC, recipeVC], animated: false)
         tabBarVC.modalPresentationStyle = .fullScreen
+        
         present(tabBarVC, animated: false)
     }
     

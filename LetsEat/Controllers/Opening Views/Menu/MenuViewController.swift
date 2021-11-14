@@ -13,18 +13,19 @@ class MenuViewController: UIViewController {
     private let areaButton: UIButton = {
         let areaButton = UIButton(frame: CGRect(x:100, y: 300, width: 200, height: 50))
         areaButton.backgroundColor = .link
-        areaButton.setTitle("Select from Area", for: .normal)
+        areaButton.setTitle("Meals by Area", for: .normal)
         areaButton.layer.cornerRadius = 12
         areaButton.addTarget(self, action: #selector(areaButtonTapped), for: .touchUpInside)
         return areaButton
     }()
     
-    private let searchButton: UIButton = {
-        let searchButton = UIButton(frame: CGRect(x:100, y: 200, width: 200, height: 50))
-        searchButton.backgroundColor = .link
-        searchButton.layer.cornerRadius = 12
-        searchButton.setTitle("Search for Meal", for: .normal)
-        return searchButton
+    private let letterButton: UIButton = {
+        let letterButton = UIButton(frame: CGRect(x:100, y: 200, width: 200, height: 50))
+        letterButton.backgroundColor = .link
+        letterButton.layer.cornerRadius = 12
+        letterButton.setTitle("Meals by first letter", for: .normal)
+        letterButton.addTarget(self, action: #selector(letterButtonTapped), for: .touchUpInside)
+        return letterButton
     }()
 
     override func viewDidLoad() {
@@ -35,65 +36,57 @@ class MenuViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
                 view.addSubview(areaButton)
-                view.addSubview(searchButton)
+                view.addSubview(letterButton)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
     }
+    
+    //Button calls
     @objc func areaButtonTapped(){
         fetchAreas()
     }
+    @objc func letterButtonTapped(){
+        getLetter()
+    }
+    
+    // Fetch functions.
     
     private func fetchAreas(){
         let task = APICaller.shared.getListData(with: "a=list", expecting: AreaList.self){ [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let model):
-                    self?.updateUI(with: model)
+                    self?.showAreaList(with: model)
                     break
                 case .failure(let error):
                     print(error.localizedDescription)
                     self?.failedToFetch()
-                    
                 }
             }
         }
     }
     
-    private func failedToFetch(){
-        print("Something went wrong")
-    }
     
-    private func updateUI(with model: AreaList){
-        
+    private func showAreaList(with model: AreaList){
         let areas = model.meals
         var areaList = [String]()
-        
         for area in areas{
             areaList.append(area.strArea)
-            print(area.strArea)
         }
-        
         let vc = AreaListViewController()
         vc.areaList = areaList
         print(areaList)
         let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true)
-//        switch models{
-//        case .areaList(let AreaList):
-//            var areas = AreaList.meals
-//            print(areas)
-//        case .mealList(let MealList):
-//            break
-//        case .recipeList(let RecipeList):
-//            break
-            
-//        default :
-//            break
-//    }
 }
     
+    private func getLetter(){
+        let vc = LetterListViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        present(nav, animated: true)
+    }
+
 }
 

@@ -19,6 +19,10 @@ struct RecipeList: Codable{
     
 }
 
+struct LetterList: Codable{
+    var meals: [Meal]
+}
+
 struct Meal: Codable {
     var strMeal: String
     var strMealThumb: String
