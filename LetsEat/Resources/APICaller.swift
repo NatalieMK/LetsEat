@@ -9,23 +9,23 @@ import Foundation
 
 final class APICaller{
     
-    static let apiCaller = APICaller()
+    static let shared = APICaller()
     private init() {}
     
     enum APIError: Error {
         case defaultError
     }
     
-    enum APISuccess: Decodable {
-        case mealList(MealList)
-
-        case recipeList(RecipeList)
-    }
+//    enum APISuccess: Codable {
+//        case mealList(MealList)
+//        case areaList(AreaList)
+//        case recipeList(RecipeList)
+//    }
     
     struct URLConstants {
  
         // URL stub for listing items (i.e. list of categories, areas, all ingredients with definitions).
-        static let listStub = "www.themealdb.com/api/json/v1/1/list.php?"
+        static let listStub = "https://www.themealdb.com/api/json/v1/1/list.php?"
         
         //URL stub for looking up recipe from meal ID.
         static let lookupStub = "www.themealdb.com/api/json/v1/1/lookup.php?"
@@ -37,7 +37,7 @@ final class APICaller{
         static let filterStub = "www.themealdb.com/api/json/v1/1/filter.php?"
     }
 
-    public func getListData(with chosenString: String, completion: @escaping (Result<APISuccess, Error>) -> Void){
+    public func getListData<T:Codable>(with chosenString: String, expecting: T.Type, completion: @escaping (Result<T, Error>) -> Void){
         
         let fullURL = URL(string: URLConstants.listStub + chosenString)
         createRequest(with: fullURL) { dataRequest in
@@ -49,12 +49,13 @@ final class APICaller{
                 }
                 
                 do {
-                    print (fullURL)
-                    let result = try JSONDecoder().decode(APISuccess.self, from: data)
+                    print(data)
+                    let result = try JSONDecoder().decode(T.self, from: data)
                     completion(.success(result))
                 }
                 
                 catch {
+                    print(String(describing: error))
                     print(error.localizedDescription)
                     completion(.failure(error))
                 }
@@ -77,3 +78,4 @@ final class APICaller{
         completion(request)
     }
 }
+

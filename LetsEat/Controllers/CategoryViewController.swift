@@ -58,10 +58,17 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
-        let row = indexPath[1]
+        let row = indexPath.row
         cell.categoryData = CategoryData(title: "\(categoryArray[row])", image: UIImage(named: categoryArray[row])!)
-        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("Tap")
+        collectionView.deselectItem(at: indexPath, animated: true)
+        print("Category name:\(categoryArray[indexPath.row])")
+        
+    
     }
     
 }
