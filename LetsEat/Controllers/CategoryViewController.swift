@@ -9,6 +9,11 @@ import UIKit
 
 class CategoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    struct CategoryData {
+        var title: String
+        var image: UIImage
+    }
+    
     private let categoryArray = ["Beef", "Chicken", "Dessert", "Lamb", "Miscellaneous", "Pasta", "Pork", "Seafood", "Side", "Starter", "Vegan", "Vegetarian", "Breakfast", "Goat"]
     
     private let collectionView = UICollectionView(
@@ -52,31 +57,11 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
      
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
         let row = indexPath[1]
+        cell.categoryData = CategoryData(title: "\(categoryArray[row])", image: UIImage(named: categoryArray[row])!)
         
-        let imageFrame = CGRect(x: 0, y: 0, width: cell.height/3, height: cell.height/3)
-        let labelFrame = CGRect(x: imageFrame.width/2, y: imageFrame.height, width: cell.width - cell.height/3, height: cell.height/2)
-        
-        var label: UILabel = UILabel(frame: labelFrame)
-        let text = "\(categoryArray[row])"
-        let attributes: [NSAttributedString.Key: Any] = [
-            .font: UIFont.boldSystemFont(ofSize: 22),
-            .foregroundColor: UIColor.white
-        ]
-        label.attributedText = NSAttributedString(string: text, attributes: attributes)
-        
-//        label.backgroundColor = .salmon
-        label.textColor = .white
-        
-        
-        var imageView: UIImageView = UIImageView(frame: imageFrame)
-        imageView.image = UIImage(named: categoryArray[row])
-//        imageView.backgroundColor = .white
-        
-        cell.contentView.addSubview(imageView)
-        cell.contentView.addSubview(label)
-
         return cell
     }
+    
 }

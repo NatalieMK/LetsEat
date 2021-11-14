@@ -12,6 +12,16 @@ final class APICaller{
     static let apiCaller = APICaller()
     private init() {}
     
+    enum APIError: Error {
+        case defaultError
+    }
+    
+    enum APISuccess: Decodable {
+        case mealList(MealList)
+
+        case recipeList(RecipeList)
+    }
+    
     struct URLConstants {
  
         // URL stub for listing items (i.e. list of categories, areas, all ingredients with definitions).
@@ -26,8 +36,34 @@ final class APICaller{
         //URL stub for filter actions (i.e. filter by category, main ingredient, or area)
         static let filterStub = "www.themealdb.com/api/json/v1/1/filter.php?"
     }
+
+    public func getListData(with chosenString: String, completion: @escaping (Result<APISuccess, Error>) -> Void){
+        
+        let fullURL = URL(string: URLConstants.listStub + chosenString)
+        createRequest(with: fullURL) { dataRequest in
+            let task = URLSession.shared.dataTask(with: dataRequest) {data, _,
+                error in
+                guard let data = data, error == nil else{
+                    completion(.failure(APIError.defaultError))
+                    return
+                }
+                
+                do {
+                    print (fullURL)
+                    let result = try JSONDecoder().decode(APISuccess.self, from: data)
+                    completion(.success(result))
+                }
+                
+                catch {
+                    print(error.localizedDescription)
+                    completion(.failure(error))
+                }
+                
+            }
+            task.resume()
+        }
+    }
     
-    public func getListedData() {}
     public func getLookupData() {}
     public func getSearchedData() {}
     public func getFilteredData() {}

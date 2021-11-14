@@ -25,6 +25,7 @@
 		39C9EFD3273C9AF60045633F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9EFD2273C9AF60045633F /* WelcomeViewController.swift */; };
 		39C9F01E273EFA3A0045633F /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9F01D273EFA3A0045633F /* APICaller.swift */; };
 		39C9F020273F151F0045633F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9F01F273F151F0045633F /* CategoryCollectionViewCell.swift */; };
+		39C9F0222740911B0045633F /* ResponseModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9F0212740911B0045633F /* ResponseModels.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		39C9EFD2273C9AF60045633F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		39C9F01D273EFA3A0045633F /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		39C9F01F273F151F0045633F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		39C9F0212740911B0045633F /* ResponseModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModels.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +163,7 @@
 		39C9EFC2273C7CDA0045633F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				39C9F0212740911B0045633F /* ResponseModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				39C9F0222740911B0045633F /* ResponseModels.swift in Sources */,
 				39C9EFC9273C7E070045633F /* SearchViewController.swift in Sources */,
 				39C9EFD1273C8D060045633F /* Extensions.swift in Sources */,
 				39C9EFCF273C7E5F0045633F /* MealListViewController.swift in Sources */,
