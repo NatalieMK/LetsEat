@@ -58,11 +58,11 @@ class LetterListViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let letterName = Array(alphabet)[indexPath.row]
-        print("\(letterName)")
-        fetchLetterRecipes(with: "\(letterName)")
-        
+        let letter = Array(alphabet)[indexPath.row]
+        print("\(letter)")
+        fetchLetterRecipes(with: "\(letter)")
     }
+    
     
     private func fetchLetterRecipes(with letter: String){
         let task = APICaller.shared.getSearchedData(with: "f=\(letter)", expecting: MealList.self){[weak self] result in
@@ -70,7 +70,6 @@ class LetterListViewController: UIViewController, UICollectionViewDelegate, UICo
                 switch result {
                 case .success(let model):
                     self?.showMealList(with: model)
-                    print("success")
                 case .failure(let error):
                     print(String(describing: error))
                     //MARK:  Need an error handler for examples such as X or Z, in which there is currently no recipes.

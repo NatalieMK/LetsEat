@@ -78,7 +78,6 @@ final class APICaller{
                     return
                 }
                 do {
-                    print(data)
                     let result = try JSONDecoder().decode(T.self, from: data)
                     completion(.success(result))
                 }
@@ -102,13 +101,12 @@ final class APICaller{
                     return
                 }
                 do {
-                    print(data)
                     let result = try JSONDecoder().decode(T.self, from: data)
                     completion(.success(result))
                 }
                 catch {
+                    print(data)
                     print(String(describing: error))
-                    print(error.localizedDescription)
                     completion(.failure(error))
                 }
             }
@@ -125,5 +123,6 @@ final class APICaller{
         var request = URLRequest(url:apiURL)
         completion(request)
     }
+    
 }
 
