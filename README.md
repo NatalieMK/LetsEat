@@ -11,6 +11,6 @@ Use of developer API key in this project is for non-commercial use.
 ## Sources 
 Though not directly copied, the following sources were used as reference throughout this project:
 #### Youtube
-iOS Academy
-CodeWithChris
-LetsBuildThatApp
+* iOS Academy
+* CodeWithChris
+* LetsBuildThatApp
