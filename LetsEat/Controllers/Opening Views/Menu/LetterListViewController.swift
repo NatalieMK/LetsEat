@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LetterListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UITableViewDelegate, UITableViewDataSource{
+class LetterListViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     struct Letter {
     var name: String
@@ -17,8 +17,8 @@ class LetterListViewController: UIViewController, UICollectionViewDelegate, UICo
     
     private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()
     )
-    
-    private let tableView = UITableView()
+    // Nested View Controller
+    private let nestedMealVC = MealTableViewController()
     
     private let alphabet = "abcdefghijklmnopqrstuvwxyz"
     
@@ -29,19 +29,15 @@ class LetterListViewController: UIViewController, UICollectionViewDelegate, UICo
         collectionView.delegate = self
         collectionView.register(LetterCollectionViewCell.self, forCellWithReuseIdentifier: LetterCollectionViewCell.identifier)
 
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.delegate = self
-        tableView.dataSource = self
-
         view.addSubview(collectionView)
-        view.addSubview(tableView)
+        view.addSubview(nestedMealVC.view)
         
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         collectionView.frame = CGRect(x: 0, y: 0, width: view.width, height: (view.height/5))
-        tableView.frame = CGRect(x: 0, y: collectionView.bottom, width: view.width, height: (view.height) - collectionView.height)
+        nestedMealVC.view.frame = CGRect(x: 0, y: collectionView.bottom, width: view.width, height: (view.height) - collectionView.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -69,7 +65,7 @@ class LetterListViewController: UIViewController, UICollectionViewDelegate, UICo
     }
     
     private func fetchLetterRecipes(with letter: String){
-        let task = APICaller.shared.getSearchedData(with: "f=\(letter)", expecting: LetterList.self){[weak self] result in
+        let task = APICaller.shared.getSearchedData(with: "f=\(letter)", expecting: MealList.self){[weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let model):
@@ -84,26 +80,19 @@ class LetterListViewController: UIViewController, UICollectionViewDelegate, UICo
         }
     }
     
-    private func showMealList(with model: LetterList){
-        let meals = model.meals
-        var letteredList = [String]()
-        
-        for meal in meals{
-            letteredList.append(meal.strMeal)
-            print(meal.strMeal)
-        }
-        mealList = letteredList
-        tableView.reloadData()
+    private func showMealList(with model: MealList){
+        nestedMealVC.mealList = nestedMealVC.populateMealList(with: model)
+        nestedMealVC.tableView.reloadData()
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return mealList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "\(mealList[indexPath.row])"
-        return cell
-    }
-    
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return mealList.count
+//    }
+//
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+//        cell.textLabel?.text = "\(mealList[indexPath.row])"
+//        return cell
+//    }
+//
 }

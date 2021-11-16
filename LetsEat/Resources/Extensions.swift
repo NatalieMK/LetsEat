@@ -64,3 +64,15 @@ extension UIViewController{
     }
 }
 
+extension UITableViewController{
+    
+    func populateMealList(with model: MealList) -> [String]{
+        let meals = model.meals
+        var categorizedList = [String]()
+        for meal in meals{
+            categorizedList.append(meal.strMeal)
+        }
+        return categorizedList
+    }
+}
+

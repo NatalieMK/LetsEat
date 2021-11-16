@@ -14,18 +14,14 @@ class AreaListViewController: UIViewController, UITableViewDelegate, UITableView
     
     private let tableView = UITableView()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(areaList)
         view.backgroundColor = .lightBlue
         view.addSubview(tableView)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.backgroundColor = .white
-    
     }
     
     override func viewDidLayoutSubviews() {
@@ -46,7 +42,9 @@ class AreaListViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let name = "\(areaList[indexPath.row])"
-        print(name)
-        
+        let vc = AreaMealViewController()
+        let nav = UINavigationController(rootViewController: vc)
+        vc.areaChosen = name
+        present(nav, animated: true)
     }
 }

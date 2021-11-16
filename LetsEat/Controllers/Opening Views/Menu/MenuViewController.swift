@@ -61,7 +61,7 @@ class MenuViewController: UIViewController {
                     self?.showAreaList(with: model)
                     break
                 case .failure(let error):
-                    print(error.localizedDescription)
+                    print(String(describing: error))
                     self?.failedToFetch()
                 }
             }
@@ -77,7 +77,6 @@ class MenuViewController: UIViewController {
         }
         let vc = AreaListViewController()
         vc.areaList = areaList
-        print(areaList)
         let nav = UINavigationController(rootViewController: vc)
         present(nav, animated: true)
 }
