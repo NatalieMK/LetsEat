@@ -66,9 +66,14 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("Tap")
         collectionView.deselectItem(at: indexPath, animated: true)
-        print("Category name:\(categoryArray[indexPath.row])")
+        let vc = MealListViewController()
+        vc.categoryChosen = "\(categoryArray[indexPath.row])"
+        print (vc.categoryChosen)
+        navigationController?.pushViewController(vc, animated: true)
         
-    
     }
     
+
+
+        
 }

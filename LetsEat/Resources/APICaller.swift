@@ -34,7 +34,7 @@ final class APICaller{
         static let searchStub = "https://www.themealdb.com/api/json/v1/1/search.php?"
         
         //URL stub for filter actions (i.e. filter by category, main ingredient, or area)
-        static let filterStub = "www.themealdb.com/api/json/v1/1/filter.php?"
+        static let filterStub = "https://www.themealdb.com/api/json/v1/1/filter.php?"
     }
 
     public func getListData<T:Codable>(with chosenString: String, expecting: T.Type, completion: @escaping (Result<T, Error>) -> Void){
@@ -77,7 +77,6 @@ final class APICaller{
                     completion(.failure(APIError.defaultError))
                     return
                 }
-                
                 do {
                     print(data)
                     let result = try JSONDecoder().decode(T.self, from: data)
@@ -89,12 +88,34 @@ final class APICaller{
                     print(error.localizedDescription)
                     completion(.failure(error))
                 }
-                
             }
             task.resume()
         }
     }
-    public func getFilteredData() {}
+    public func getFilteredData<T:Codable>(with chosenString: String, expecting: T.Type, completion: @escaping (Result<T, Error>) -> Void){
+        
+        let fullURL = URL(string: URLConstants.filterStub + chosenString)
+        createRequest(with: fullURL) { dataRequest in
+            let task = URLSession.shared.dataTask(with: dataRequest) { data, _, error in
+                guard let data = data, error == nil else{
+                    completion(.failure(APIError.defaultError))
+                    return
+                }
+                do {
+                    print(data)
+                    let result = try JSONDecoder().decode(T.self, from: data)
+                    completion(.success(result))
+                }
+                catch {
+                    print(String(describing: error))
+                    print(error.localizedDescription)
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+        
     
     
     public func createRequest(with url: URL?, completion: @escaping (URLRequest) -> Void){

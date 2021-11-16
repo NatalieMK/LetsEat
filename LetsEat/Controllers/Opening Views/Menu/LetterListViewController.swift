@@ -28,7 +28,6 @@ class LetterListViewController: UIViewController, UICollectionViewDelegate, UICo
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(LetterCollectionViewCell.self, forCellWithReuseIdentifier: LetterCollectionViewCell.identifier)
-        
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
@@ -41,8 +40,8 @@ class LetterListViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        collectionView.frame = CGRect(x: 0, y: 0, width: view.width, height: (view.height/3))
-        tableView.frame = CGRect(x: 0, y: collectionView.bottom, width: view.width, height: (view.height/2))
+        collectionView.frame = CGRect(x: 0, y: 0, width: view.width, height: (view.height/5))
+        tableView.frame = CGRect(x: 0, y: collectionView.bottom, width: view.width, height: (view.height) - collectionView.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -59,7 +58,7 @@ class LetterListViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (view.width/13 - 13),
-                      height: (view.width/13 - 13))
+                      height: (view.width/13))
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -78,7 +77,7 @@ class LetterListViewController: UIViewController, UICollectionViewDelegate, UICo
                     print("success")
                 case .failure(let error):
                     print(String(describing: error))
-                    print(error.localizedDescription)
+                    //MARK:  Need an error handler for examples such as X or Z, in which there is currently no recipes.
                     self?.failedToFetch()
                 }
             }

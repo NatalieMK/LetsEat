@@ -21,7 +21,7 @@ class LetterCollectionViewCell: UICollectionViewCell {
     
     private let label: UILabel = {
         let label = UILabel()
-        label.text = "hi"
+        label.textColor = .salmon
         return label
         }()
     
