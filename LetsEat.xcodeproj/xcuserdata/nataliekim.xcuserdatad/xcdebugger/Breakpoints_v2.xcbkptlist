@@ -3,4 +3,22 @@
    uuid = "8FF8BF38-24A3-472F-8B52-7B67557F9C94"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16530D61-48BD-47FB-BB08-E19F23850D88"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LetsEat/Controllers/Opening Views/Menu/LetterListViewController.swift"
+            startingColumnNumber = "42"
+            endingColumnNumber = "42"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -38,7 +38,6 @@ final class APICaller{
     }
 
     public func getListData<T:Codable>(with chosenString: String, expecting: T.Type, completion: @escaping (Result<T, Error>) -> Void){
-        
         let fullURL = URL(string: URLConstants.listStub + chosenString)
         createRequest(with: fullURL) { dataRequest in
             let task = URLSession.shared.dataTask(with: dataRequest) {data, _,
@@ -47,19 +46,14 @@ final class APICaller{
                     completion(.failure(APIError.defaultError))
                     return
                 }
-                
                 do {
-                    print(data)
                     let result = try JSONDecoder().decode(T.self, from: data)
                     completion(.success(result))
                 }
-                
                 catch {
                     print(String(describing: error))
-                    print(error.localizedDescription)
                     completion(.failure(error))
                 }
-                
             }
             task.resume()
         }
@@ -68,7 +62,6 @@ final class APICaller{
     public func getLookupData() {}
     
     public func getSearchedData<T:Codable>(with chosenString: String, expecting: T.Type, completion: @escaping (Result<T, Error>) -> Void){
-        
         let fullURL = URL(string: URLConstants.searchStub + chosenString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
         createRequest(with: fullURL) { dataRequest in
             let task = URLSession.shared.dataTask(with: dataRequest) {data, _,
@@ -81,16 +74,15 @@ final class APICaller{
                     let result = try JSONDecoder().decode(T.self, from: data)
                     completion(.success(result))
                 }
-                
                 catch {
                     print(String(describing: error))
-                    print(error.localizedDescription)
                     completion(.failure(error))
                 }
             }
             task.resume()
         }
     }
+    
     public func getFilteredData<T:Codable>(with chosenString: String, expecting: T.Type, completion: @escaping (Result<T, Error>) -> Void){
         
         let fullURL = URL(string: URLConstants.filterStub + chosenString)
@@ -105,7 +97,6 @@ final class APICaller{
                     completion(.success(result))
                 }
                 catch {
-                    print(data)
                     print(String(describing: error))
                     completion(.failure(error))
                 }
@@ -114,15 +105,12 @@ final class APICaller{
         }
     }
         
-    
-    
     public func createRequest(with url: URL?, completion: @escaping (URLRequest) -> Void){
         guard let apiURL = url else{
             return
         }
-        var request = URLRequest(url:apiURL)
+        let request = URLRequest(url:apiURL)
         completion(request)
     }
-    
 }
 

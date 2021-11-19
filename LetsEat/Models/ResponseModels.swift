@@ -38,7 +38,6 @@ struct Recipe: Codable{
     var strMeal: String
     var strArea: String
     var strInstructions: String
-
     var strIngredient1: String
     var strIngredient2: String?
     var strIngredient3: String?
@@ -59,7 +58,6 @@ struct Recipe: Codable{
     var strIngredient18: String?
     var strIngredient19: String?
     var strIngredient20: String?
-    
     var strMeasure1: String
     var strMeasure2: String?
     var strMeasure3: String?

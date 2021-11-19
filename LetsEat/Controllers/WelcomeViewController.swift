@@ -26,7 +26,6 @@ class WelcomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         title = "Let's Eat!"
         view.backgroundColor = .white
         
@@ -39,13 +38,11 @@ class WelcomeViewController: UIViewController {
                                              action: #selector(screenTapped))
         view.addGestureRecognizer(gesture)
         gesture.numberOfTapsRequired = 1
-
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let size = view.width/3
-        
         imageView.frame = CGRect(x: (view.width - size)/2,
                                  y: view.height/3,
                                  width: size,
@@ -55,7 +52,6 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc private func screenTapped(){
-        print("tapped")
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
 }

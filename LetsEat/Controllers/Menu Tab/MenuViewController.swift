@@ -53,8 +53,6 @@ class MenuViewController: UIViewController {
         getLetter()
     }
     
-    // Fetch functions.
-    
     private func fetchAreas(){
         let task = APICaller.shared.getListData(with: "a=list", expecting: AreaList.self){ [weak self] result in
             DispatchQueue.main.async {
@@ -69,7 +67,6 @@ class MenuViewController: UIViewController {
             }
         }
     }
-    
     
     private func showAreaList(with model: AreaList){
         let areas = model.meals

@@ -3,7 +3,6 @@
 //  LetsEat
 //
 //  Created by Natalie on 11/10/21.
-//
 
 import Foundation
 import UIKit

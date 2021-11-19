@@ -61,15 +61,10 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         let imageFrame = CGRect(x: 0, y: 0, width: contentView.height/3, height: contentView.height/3)
         let labelFrame = CGRect(x: imageFrame.width/2, y: imageFrame.height, width: contentView.width - contentView.height/3, height: contentView.height/2)
-        
-        //        CGRect(x: contentView.left, y: contentView.top , width: contentView.width/4, height: contentView.height)
-        
         imageView.frame = imageFrame
         label.frame = labelFrame
-        
-        
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         imageView.image = nil

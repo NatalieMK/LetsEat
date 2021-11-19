@@ -60,7 +60,6 @@ class LetterListViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let letter = Array(alphabet)[indexPath.row]
-        print("\(letter)")
         fetchLetterRecipes(with: "\(letter)")
     }
     

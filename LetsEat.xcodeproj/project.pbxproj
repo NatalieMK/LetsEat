@@ -29,6 +29,8 @@
 		39C9F0242740A77A0045633F /* AreaListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9F0232740A77A0045633F /* AreaListViewController.swift */; };
 		39C9F02727418B1B0045633F /* LetterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9F02627418B1B0045633F /* LetterListViewController.swift */; };
 		39C9F02B2741BB3B0045633F /* LetterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9F02A2741BB3B0045633F /* LetterCollectionViewCell.swift */; };
+		39C9F02D274357050045633F /* AreaMealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9F02C274357050045633F /* AreaMealViewController.swift */; };
+		39C9F02F27435B400045633F /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9F02E27435B400045633F /* MealTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		39C9F0232740A77A0045633F /* AreaListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaListViewController.swift; sourceTree = "<group>"; };
 		39C9F02627418B1B0045633F /* LetterListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterListViewController.swift; sourceTree = "<group>"; };
 		39C9F02A2741BB3B0045633F /* LetterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCollectionViewCell.swift; sourceTree = "<group>"; };
+		39C9F02C274357050045633F /* AreaMealViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaMealViewController.swift; sourceTree = "<group>"; };
+		39C9F02E27435B400045633F /* MealTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +133,8 @@
 				39C9EFC4273C7CF00045633F /* Resources */,
 				39C9EFC1273C7CC20045633F /* Controllers */,
 				39C9EFC2273C7CDA0045633F /* Models */,
-				39C9EF9A273C7CB60045633F /* Assets.xcassets */,
 				39C9EF9F273C7CB60045633F /* Info.plist */,
+				39C9EF9A273C7CB60045633F /* Assets.xcassets */,
 			);
 			path = LetsEat;
 			sourceTree = "<group>";
@@ -155,11 +159,12 @@
 		39C9EFC1273C7CC20045633F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				39C9F0252740A7960045633F /* Opening Views */,
+				39C9F02E27435B400045633F /* MealTableViewController.swift */,
+				39C9EFD2273C9AF60045633F /* WelcomeViewController.swift */,
+				39C9F03027436B0B0045633F /* Categories Tab */,
+				39C9F02927418B520045633F /* Menu Tab */,
 				39C9EFC8273C7E070045633F /* SearchViewController.swift */,
-				39C9EFCA273C7E1C0045633F /* CategoryViewController.swift */,
 				39C9EFCC273C7E3F0045633F /* RecipeViewController.swift */,
-				39C9EFCE273C7E5F0045633F /* MealListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -194,24 +199,25 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		39C9F0252740A7960045633F /* Opening Views */ = {
-			isa = PBXGroup;
-			children = (
-				39C9F02927418B520045633F /* Menu */,
-				39C9EFD2273C9AF60045633F /* WelcomeViewController.swift */,
-				39C9EF95273C7CB50045633F /* LetsEatViewController.swift */,
-			);
-			path = "Opening Views";
-			sourceTree = "<group>";
-		};
-		39C9F02927418B520045633F /* Menu */ = {
+		39C9F02927418B520045633F /* Menu Tab */ = {
 			isa = PBXGroup;
 			children = (
 				39C9F02627418B1B0045633F /* LetterListViewController.swift */,
 				39C9F0232740A77A0045633F /* AreaListViewController.swift */,
 				39C9EFC6273C7DB20045633F /* MenuViewController.swift */,
+				39C9F02C274357050045633F /* AreaMealViewController.swift */,
 			);
-			path = Menu;
+			path = "Menu Tab";
+			sourceTree = "<group>";
+		};
+		39C9F03027436B0B0045633F /* Categories Tab */ = {
+			isa = PBXGroup;
+			children = (
+				39C9EFCA273C7E1C0045633F /* CategoryViewController.swift */,
+				39C9EF95273C7CB50045633F /* LetsEatViewController.swift */,
+				39C9EFCE273C7E5F0045633F /* MealListViewController.swift */,
+			);
+			path = "Categories Tab";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +359,7 @@
 				39C9EF96273C7CB50045633F /* LetsEatViewController.swift in Sources */,
 				39C9F020273F151F0045633F /* CategoryCollectionViewCell.swift in Sources */,
 				39C9EFCD273C7E3F0045633F /* RecipeViewController.swift in Sources */,
+				39C9F02D274357050045633F /* AreaMealViewController.swift in Sources */,
 				39C9F0242740A77A0045633F /* AreaListViewController.swift in Sources */,
 				39C9EF92273C7CB50045633F /* AppDelegate.swift in Sources */,
 				39C9EFD3273C9AF60045633F /* WelcomeViewController.swift in Sources */,
@@ -360,6 +367,7 @@
 				39C9F01E273EFA3A0045633F /* APICaller.swift in Sources */,
 				39C9EFCB273C7E1C0045633F /* CategoryViewController.swift in Sources */,
 				39C9F02727418B1B0045633F /* LetterListViewController.swift in Sources */,
+				39C9F02F27435B400045633F /* MealTableViewController.swift in Sources */,
 				39C9EFC7273C7DB20045633F /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

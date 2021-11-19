@@ -56,7 +56,6 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     }
      
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell.identifier, for: indexPath) as! CategoryCollectionViewCell
         let row = indexPath.row
         cell.categoryData = CategoryData(title: "\(categoryArray[row])", image: UIImage(named: categoryArray[row])!)
@@ -64,11 +63,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Tap")
         collectionView.deselectItem(at: indexPath, animated: true)
         let vc = MealListViewController()
         vc.categoryChosen = "\(categoryArray[indexPath.row])"
-        print (vc.categoryChosen)
         navigationController?.pushViewController(vc, animated: true)
         
     }
