@@ -9,6 +9,11 @@ import UIKit
 
 class RecipeViewController: UIViewController {
 
+    public var mealName: String = ""
+    public var ingredients: [String?] = []
+    public var measurements: [String?] = []
+    public var instructions: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .lavendar
@@ -16,5 +21,21 @@ class RecipeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if (mealName != ""){
+            // display name
+            print(mealName)
+        }
+        if (ingredients != []){
+            print(ingredients)
+        }
+        if (measurements != []){
+            print(measurements)
+        }
+        if (instructions != ""){
+            print(instructions)
+        }
+    }
 
 }

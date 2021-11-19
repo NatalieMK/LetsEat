@@ -15,8 +15,8 @@ struct AreaList: Codable{
     var meals: [Area]
 }
 
-struct RecipeList: Codable{
-    
+struct Recipes: Codable{
+    var meals: [Recipe]
 }
 
 struct LetterList: Codable{
@@ -35,6 +35,7 @@ struct Area: Codable{
 
 struct Recipe: Codable{
     var idMeal: String
+    var strMeal: String
     var strArea: String
     var strInstructions: String
 

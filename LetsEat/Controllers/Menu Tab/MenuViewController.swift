@@ -12,25 +12,27 @@ class MenuViewController: UIViewController {
     
     private let areaButton: UIButton = {
         let areaButton = UIButton(frame: CGRect(x:100, y: 300, width: 200, height: 50))
-        areaButton.backgroundColor = .link
+        areaButton.backgroundColor = .white
         areaButton.setTitle("Meals by Area", for: .normal)
         areaButton.layer.cornerRadius = 12
+        areaButton.setTitleColor(.systemGray, for: .normal)
         areaButton.addTarget(self, action: #selector(areaButtonTapped), for: .touchUpInside)
         return areaButton
     }()
     
     private let letterButton: UIButton = {
         let letterButton = UIButton(frame: CGRect(x:100, y: 200, width: 200, height: 50))
-        letterButton.backgroundColor = .link
+        letterButton.backgroundColor = .white
         letterButton.layer.cornerRadius = 12
         letterButton.setTitle("Meals by first letter", for: .normal)
+        letterButton.setTitleColor(.systemGray, for: .normal)
         letterButton.addTarget(self, action: #selector(letterButtonTapped), for: .touchUpInside)
         return letterButton
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .lavendar
+        view.backgroundColor = .lightBlue
         title = "Menu"
     }
     

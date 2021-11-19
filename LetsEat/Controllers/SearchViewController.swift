@@ -14,19 +14,21 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UISearchResul
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .salmon
+        view.backgroundColor = .white
         title = "Search"
         searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
         navigationItem.searchController = searchController
         view.addSubview(nestedMealVC.view)
-        nestedMealVC.view.backgroundColor = .salmon
-    
+        self.addChild(nestedMealVC)
+        nestedMealVC.didMove(toParent: self)
+        nestedMealVC.view.backgroundColor = .white
     }
     
     override func viewDidLayoutSubviews() {
         searchController.searchBar.sizeToFit()
         searchController.searchBar.clipsToBounds = true
-        nestedMealVC.view.frame = CGRect(x: 0, y: searchController.searchBar.bottom, width: view.width, height: view.width)
+        nestedMealVC.view.frame = CGRect(x: 0, y: searchController.searchBar.bottom, width: view.width, height: view.height - searchController.searchBar.height)
     }
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -47,6 +49,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UISearchResul
                 nestedMealVC.tableView.reloadData()
             }
         }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        nestedMealVC.mealList = []
+        nestedMealVC.tableView.reloadData()
     }
     
     private func fetchLetterRecipes(with letter: String){

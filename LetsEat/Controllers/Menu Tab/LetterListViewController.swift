@@ -31,7 +31,8 @@ class LetterListViewController: UIViewController, UICollectionViewDelegate, UICo
 
         view.addSubview(collectionView)
         view.addSubview(nestedMealVC.view)
-        
+        self.addChild(nestedMealVC)
+        nestedMealVC.didMove(toParent: self)
     }
     
     override func viewDidLayoutSubviews() {
@@ -83,15 +84,4 @@ class LetterListViewController: UIViewController, UICollectionViewDelegate, UICo
         nestedMealVC.mealList = nestedMealVC.populateMealList(with: model)
         nestedMealVC.tableView.reloadData()
     }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return mealList.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//        cell.textLabel?.text = "\(mealList[indexPath.row])"
-//        return cell
-//    }
-//
 }

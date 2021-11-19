@@ -69,7 +69,7 @@ final class APICaller{
     
     public func getSearchedData<T:Codable>(with chosenString: String, expecting: T.Type, completion: @escaping (Result<T, Error>) -> Void){
         
-        let fullURL = URL(string: URLConstants.searchStub + chosenString)
+        let fullURL = URL(string: URLConstants.searchStub + chosenString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
         createRequest(with: fullURL) { dataRequest in
             let task = URLSession.shared.dataTask(with: dataRequest) {data, _,
                 error in

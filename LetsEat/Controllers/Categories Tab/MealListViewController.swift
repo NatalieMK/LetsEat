@@ -16,13 +16,17 @@ class MealListViewController: UIViewController{
         super.viewDidLoad()
         view.backgroundColor = .lightBlue
         fetchMeals(with: categoryChosen)
-        view.addSubview(nestedMealVC.view)
+        title = "Meals"
+        self.view.addSubview(nestedMealVC.view)
+        self.addChild(nestedMealVC)
+        nestedMealVC.didMove(toParent: self)
+        
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         // Layout for TableViewController View, frame height accounting for bottom nav bar.
-        nestedMealVC.view.frame = CGRect(x: 0, y: view.height/6, width: view.width, height: view.height - (view.height/4 + 12))
+        nestedMealVC.view.frame = CGRect(x: 0, y: view.height/7, width: view.width, height: view.height - (view.height/7))
     }
     
     private func fetchMeals(with category: String) {

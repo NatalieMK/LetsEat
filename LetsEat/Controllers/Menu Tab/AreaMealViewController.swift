@@ -16,8 +16,10 @@ class AreaMealViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(nestedMealVC.view)
+        self.addChild(nestedMealVC)
+        nestedMealVC.didMove(toParent: presentingViewController)
         fetchMeals(with: areaChosen)
-        view.backgroundColor = .salmon
+        view.backgroundColor = .lightBlue
     }
     
     override func viewDidLayoutSubviews() {

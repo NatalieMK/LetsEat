@@ -45,7 +45,8 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect){
         super.init(frame: frame)
-        contentView.backgroundColor = .lavendar
+        contentView.layer.cornerRadius = 4
+        contentView.backgroundColor = .lightBlue
         contentView.addSubview(imageView)
         contentView.addSubview(label)
     }
