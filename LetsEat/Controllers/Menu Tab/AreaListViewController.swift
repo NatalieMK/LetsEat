@@ -43,8 +43,8 @@ class AreaListViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.deselectRow(at: indexPath, animated: true)
         let name = "\(areaList[indexPath.row])"
         let vc = AreaMealViewController()
-        let nav = UINavigationController(rootViewController: vc)
+//        let nav = UINavigationController(rootViewController: vc)
         vc.areaChosen = name
-        present(nav, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

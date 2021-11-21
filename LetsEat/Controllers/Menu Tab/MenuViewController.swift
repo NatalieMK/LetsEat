@@ -75,15 +75,19 @@ class MenuViewController: UIViewController {
             areaList.append(area.strArea)
         }
         let vc = AreaListViewController()
+        self.addChild(vc)
+        vc.didMove(toParent: self)
         vc.areaList = areaList
-        let nav = UINavigationController(rootViewController: vc)
-        present(nav, animated: true)
+        print(vc.parent)
+//        let nav = UINavigationController(rootViewController: vc)
+        self.navigationController?.pushViewController(vc, animated: false)
 }
     
     private func getLetter(){
         let vc = LetterListViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        present(nav, animated: true)
+        self.addChild(vc)
+        vc.didMove(toParent: self)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 }

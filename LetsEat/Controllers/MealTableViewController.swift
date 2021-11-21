@@ -66,7 +66,7 @@ class MealTableViewController: UITableViewController {
         print(parent)
         parent?.tabBarController?.viewControllers![3].title = "Recipe"
         parent?.tabBarController?.viewControllers![3].tabBarItem.image = UIImage(systemName: "scroll")
-        parent?.tabBarController?.selectedIndex = 3
+        parent?.navigationController?.tabBarController?.selectedIndex = 3
         self.removeFromParent()
     }
     

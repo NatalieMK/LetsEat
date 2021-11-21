@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		393257E92748402A0010D958 /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393257E82748402A0010D958 /* RecipeCollectionViewCell.swift */; };
 		39C9EF92273C7CB50045633F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9EF91273C7CB50045633F /* AppDelegate.swift */; };
 		39C9EF94273C7CB50045633F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9EF93273C7CB50045633F /* SceneDelegate.swift */; };
 		39C9EF96273C7CB50045633F /* LetsEatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C9EF95273C7CB50045633F /* LetsEatViewController.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		393257E82748402A0010D958 /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		39C9EF8E273C7CB50045633F /* LetsEat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsEat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39C9EF91273C7CB50045633F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		39C9EF93273C7CB50045633F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				39C9F01D273EFA3A0045633F /* APICaller.swift */,
 				39C9F01F273F151F0045633F /* CategoryCollectionViewCell.swift */,
 				39C9F02A2741BB3B0045633F /* LetterCollectionViewCell.swift */,
+				393257E82748402A0010D958 /* RecipeCollectionViewCell.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				39C9EFCD273C7E3F0045633F /* RecipeViewController.swift in Sources */,
 				39C9F02D274357050045633F /* AreaMealViewController.swift in Sources */,
 				39C9F0242740A77A0045633F /* AreaListViewController.swift in Sources */,
+				393257E92748402A0010D958 /* RecipeCollectionViewCell.swift in Sources */,
 				39C9EF92273C7CB50045633F /* AppDelegate.swift in Sources */,
 				39C9EFD3273C9AF60045633F /* WelcomeViewController.swift in Sources */,
 				39C9EF94273C7CB50045633F /* SceneDelegate.swift in Sources */,
